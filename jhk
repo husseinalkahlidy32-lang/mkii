@@ -20,7 +20,20 @@ void showTasks() {
         cout << i + 1 << ". " << tasks[i] << endl;
     }
 }
+void editTask() {
+    int num;
+    cout << "Enter task number to edit: ";
+    cin >> num;
 
+    if (num > 0 && num <= tasks.size()) {
+        cout << "Enter new task: ";
+        cin.ignore();
+        getline(cin, tasks[num - 1]);
+        cout << "Task updated!\n";
+    } else {
+        cout << "Invalid number!\n";
+    }
+}
 
 void deleteTask() {
     int num;
